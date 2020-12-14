@@ -1,6 +1,7 @@
 import pytest
 from faker import Faker
 from thenewboston.utils.signed_requests import generate_signed_request
+from thenewboston.constants.network import BLOCK_IDENTIFIER_LENGTH
 
 
 @pytest.fixture
@@ -9,10 +10,10 @@ def block_identifier():
 
 
 @pytest.fixture
-def signed_confirmation_block_history_request(validator, block_identifier):
+def signed_confirmation_block_history_request(signing_key, block_identifier):
     yield generate_signed_request(
         data={
             'block_identifier': block_identifier,
         },
-        nid_signing_key=validator.node_identifier,
+        nid_signing_key=signing_key,
     )
