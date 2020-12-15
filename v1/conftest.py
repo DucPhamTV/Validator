@@ -3,14 +3,19 @@ import os
 import pytest
 from django.conf import settings
 from django.core.management import call_command
+from nacl.encoding import HexEncoder
+from nacl.signing import SigningKey
 from pytest_django.migrations import DisableMigrations
 from thenewboston.accounts.manage import create_account
 from thenewboston.blocks.block import generate_block
 from thenewboston.third_party.pytest.client import UserWrapper
+from thenewboston.utils.messages import get_message_hash
+from thenewboston.utils.signed_requests import generate_signed_request
 from thenewboston.verify_keys.verify_key import encode_verify_key
 
 from v1.banks.factories.bank import BankFactory
 from v1.cache_tools.helpers import rebuild_cache
+from v1.meta.helpers.block_identifier import get_initial_block_identifier
 from v1.self_configurations.helpers.self_configuration import get_self_configuration
 from v1.self_configurations.management.commands.initialize_test_confirmation_validator import (
     FIXTURES_DIR as CONFIRMATION_VALIDATOR_FIXTURES_DIR
@@ -30,6 +35,11 @@ def account_data():
 def account_number(account_data):
     signing_key, account_number = account_data
     yield account_number
+
+
+@pytest.fixture
+def initial_block_identifier(confirmation_validator_configuration):
+    return get_initial_block_identifier()
 
 
 @pytest.fixture
@@ -53,6 +63,32 @@ def block_data(account_data, encoded_account_number, random_encoded_account_numb
                 'recipient': random_encoded_account_number
             }
         ]
+    )
+
+
+@pytest.fixture
+def confirmation_block_data(block_data, initial_block_identifier, primary_validator_signing_key, account_number):
+    yield generate_signed_request(
+        data={
+            'block': block_data,
+            'block_identifier': initial_block_identifier,
+            'updated_balances': [
+                {
+                    'account_number': block_data['account_number'],
+                    'balance': 1,
+                    'balance_lock': get_message_hash(message=block_data['message']),
+                }
+            ],
+        },
+        nid_signing_key=primary_validator_signing_key,
+    )
+
+
+@pytest.fixture
+def primary_validator_signing_key():
+    yield SigningKey(
+        '6f812a35643b55a77f71c3b722504fbc5918e83ec72965f7fd33865ed0be8f81',
+        encoder=HexEncoder,
     )
 
 
