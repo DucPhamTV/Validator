@@ -13,7 +13,7 @@ def initial_block_identifier(primary_validator_configuration):
 
 
 @pytest.fixture
-def confirmation_block_data(block_data, block_identifier, primary_validator_signing_key, account_number):
+def confirmation_block_data(block_data, initial_block_identifier, primary_validator_signing_key, account_number):
     yield generate_signed_request(
         data={
             'block': block_data,
