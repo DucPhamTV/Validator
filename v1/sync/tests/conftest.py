@@ -17,7 +17,7 @@ def confirmation_block_data(block_data, initial_block_identifier, primary_valida
     yield generate_signed_request(
         data={
             'block': block_data,
-            'block_identifier': block_identifier,
+            'block_identifier': initial_block_identifier,
             'updated_balances': [
                 {
                     'account_number': block_data['account_number'],
