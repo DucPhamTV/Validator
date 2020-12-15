@@ -8,7 +8,7 @@ from v1.meta.helpers.block_identifier import get_initial_block_identifier
 
 
 @pytest.fixture
-def block_identifier(primary_validator_configuration):
+def initial_block_identifier(primary_validator_configuration):
     return get_initial_block_identifier()
 
 
