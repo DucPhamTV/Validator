@@ -23,13 +23,13 @@ init_node() {
 
     /opt/project/manage.py initialize_validator \
       --node_identifier "$NODE_IDENTIFIER" \
-      --account_number "$ACCOUNT_NUMBER" \
+      --account_number "$CV_ACCOUNT_NUMBER" \
       --default_transaction_fee 1 \
       --node_type CONFIRMATION_VALIDATOR \
       --protocol http \
       --ip_address "$PUBLIC_IP_ADDRESS" \
       --port "$NODE_PORT" \
-      --root_account_file https://gist.githubusercontent.com/buckyroberts/395c946b33b9a458d677c919ae3f00b1/raw/55acc740cb25d2b4d02430f096b225e70677ec23/alpha-02.json \
+      --root_account_file http://192.168.1.11:8009/root_account_file.json \
       --version_number v1.0 \
       --unattended
 

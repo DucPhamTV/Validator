@@ -23,8 +23,8 @@ services:
       context: .
     environment:
       - DJANGO_APPLICATION_ENVIRONMENT=local
-      - NETWORK_SIGNING_KEY=731f928711f30257d20bde471200c11975009415b4c6f596e7ee81bfed1a033b
-      - NODE_IDENTIFIER=ed3b6d8e7ba1819ccedb17f9a7427b8e76b22dccf2bc130fc2386daf86ec80d3
+      - NETWORK_SIGNING_KEY=44f338c2dd81953449fea7934a66df64808a976d208cc979ab77cb86e5328e93
+      - NODE_IDENTIFIER=c09d58113434868aedf2d610105c4b0b72c9c504845b2b91ff096bf6da3de549
       - NODE_PORT=8001
       - REDIS_DB=0
       - REDIS_HOST=redis
@@ -54,8 +54,8 @@ services:
       context: .
     environment:
       - DJANGO_APPLICATION_ENVIRONMENT=local
-      - NETWORK_SIGNING_KEY=46a23fd52b2690f5acf56654489fd67b3734a52f35a2b7827f5caeaa06c0c0a5
-      - NODE_IDENTIFIER=8ecf3ff5cc8b6b9db7077f9776043b21d22a59544056add03bdfa4c8b35a13bd
+      - NETWORK_SIGNING_KEY=1a66e8e14a30e3d106cf8b242793f1bc33d36b068c9a70c18329c71e094cec9b
+      - NODE_IDENTIFIER=d3c65bf3e986f5875d81358818f88cfc6b54d8747ec839847f005e53580f51eb
       - NODE_PORT=8002
       - REDIS_DB=1
       - REDIS_HOST=redis
@@ -87,8 +87,8 @@ services:
       context: .
     environment:
       - DJANGO_APPLICATION_ENVIRONMENT=local
-      - NETWORK_SIGNING_KEY=1c7822c93d914ac40fc11d7bd71959d5aadb1ecd07fbffc7d9c481ccd043d4a9
-      - NODE_IDENTIFIER=73ca63ab2ab4ad8a2f48baa321bce17f8840f7355211b32a288b4e8c3e5a7a4d
+      - NETWORK_SIGNING_KEY=794dcf9674580d881f94d93ff819750a247b8a0bf0b1d320a274cc2c989bd367
+      - NODE_IDENTIFIER=4606a234ab7d09e0b5f04fc396a61b9272fcc8846d9c01cc61ac22c26af5d3b8
       - NODE_PORT=8003
       - REDIS_DB=2
       - REDIS_HOST=redis
@@ -118,8 +118,8 @@ services:
     image: docker.pkg.github.com/thenewboston-developers/bank/bank:latest
     environment:
       - DJANGO_APPLICATION_ENVIRONMENT=local
-      - NETWORK_SIGNING_KEY=d2621d30bc323ea35fe1c4fb11b4babb7fd4c1c0593805f011caedf7b7ce0031
-      - NODE_IDENTIFIER=ce236a006a0aec488ad8e5161dd018b2ce84d9e4d9adc897eca7fb112864198f
+      - NETWORK_SIGNING_KEY=efae2c6db31f0296e40e3294229c4c7e17501b31e58e02ac9746aa8dbf14f6c0
+      - NODE_IDENTIFIER=54e16bed3162cc3a47dec1bcbb9215d256f080d1842734a72f7679f293b52f30
       - NODE_PORT=8004
       - REDIS_DB=3
       - REDIS_HOST=redis
@@ -148,7 +148,7 @@ services:
       context: .
     environment:
       - DJANGO_APPLICATION_ENVIRONMENT=local
-      - NETWORK_SIGNING_KEY=731f928711f30257d20bde471200c11975009415b4c6f596e7ee81bfed1a033b
+      - NETWORK_SIGNING_KEY=44f338c2dd81953449fea7934a66df64808a976d208cc979ab77cb86e5328e93
       - REDIS_DB=0
       - REDIS_HOST=redis
       - POSTGRES_HOST=db
@@ -173,7 +173,7 @@ services:
       context: .
     environment:
       - DJANGO_APPLICATION_ENVIRONMENT=local
-      - NETWORK_SIGNING_KEY=46a23fd52b2690f5acf56654489fd67b3734a52f35a2b7827f5caeaa06c0c0a5
+      - NETWORK_SIGNING_KEY=1a66e8e14a30e3d106cf8b242793f1bc33d36b068c9a70c18329c71e094cec9b
       - REDIS_DB=1
       - REDIS_HOST=redis
       - POSTGRES_HOST=db
@@ -198,7 +198,7 @@ services:
       context: .
     environment:
       - DJANGO_APPLICATION_ENVIRONMENT=local
-      - NETWORK_SIGNING_KEY=1c7822c93d914ac40fc11d7bd71959d5aadb1ecd07fbffc7d9c481ccd043d4a9
+      - NETWORK_SIGNING_KEY=794dcf9674580d881f94d93ff819750a247b8a0bf0b1d320a274cc2c989bd367
       - REDIS_DB=2
       - REDIS_HOST=redis
       - POSTGRES_HOST=db
@@ -221,7 +221,7 @@ services:
     image: docker.pkg.github.com/thenewboston-developers/bank/bank:latest
     environment:
       - DJANGO_APPLICATION_ENVIRONMENT=local
-      - NETWORK_SIGNING_KEY=d2621d30bc323ea35fe1c4fb11b4babb7fd4c1c0593805f011caedf7b7ce0031
+      - NETWORK_SIGNING_KEY=efae2c6db31f0296e40e3294229c4c7e17501b31e58e02ac9746aa8dbf14f6c0
       - REDIS_DB=3
       - REDIS_HOST=redis
       - POSTGRES_HOST=db
