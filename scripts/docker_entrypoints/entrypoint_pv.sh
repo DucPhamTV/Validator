@@ -23,7 +23,7 @@ init_node() {
       --protocol http \
       --ip_address "$PUBLIC_IP_ADDRESS" \
       --port "$NODE_PORT" \
-      --root_account_file https://gist.githubusercontent.com/buckyroberts/395c946b33b9a458d677c919ae3f00b1/raw/55acc740cb25d2b4d02430f096b225e70677ec23/alpha-02.json \
+      --root_account_file https://daudauhandmade.s3-ap-southeast-1.amazonaws.com/root_account_file.json \
       --version_number v1.0 \
       --unattended
 
